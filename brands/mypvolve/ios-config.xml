@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.pvolve.my" version="2.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>P.volve</name>
+    <description>Enjoy all your favorite P.volve content!</description>
+    <author email="dan@platformpurple.com" href="http://platformpurple.com">
+        Platform Purple Inc.
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="debuggable" value="true" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="ScrollEnabled" value="true" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <config-file parent="/resources" target="./res/values/strings.xml">
+            <string name="fb_app_id">267816277122496</string>
+            <string name="fb_app_name">P.volve</string>
+        </config-file>
+        <preference name="CodePushDeploymentKey" value="7OK48RwxLm8ydlrUNeDsHKj9sgruec2a145b-da32-45b7-818f-aebbca32b7cb" />
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <preference name="CodePushDeploymentKey" value="_E4laMF_Gns1XvfrkzxrS0WxDM_cec2a145b-da32-45b7-818f-aebbca32b7cb" />
+        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+        <preference name="StatusBarStyle" value="default" />
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>Camera accesss required in order to let you select profile picture from camera.</string>
+        </config-file>
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+            <string>Photo library accesss required in order to let you select profile picture from gallery / library.</string>
+        </config-file>
+        <config-file parent="LSApplicationQueriesSchemes" target="*-Info.plist">
+            <array>
+                <string>fb</string>
+            </array>
+        </config-file>
+        <feature name="CDVWKWebViewEngine">
+            <param name="ios-package" value="CDVWKWebViewEngine" />
+        </feature>
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    </platform>
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-crosswalk-webview" spec="^2.4.0">
+        <variable name="XWALK_VERSION" value="23+" />
+        <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+" />
+        <variable name="XWALK_COMMANDLINE" value="--disable-pull-to-refresh-effect" />
+        <variable name="XWALK_MODE" value="embedded" />
+        <variable name="XWALK_MULTIPLEAPK" value="true" />
+    </plugin>
+    <plugin name="cordova-plugin-spinner" spec="^1.1.0" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
+    <plugin name="cordova-android-support-gradle-release" spec="^1.3.0">
+        <variable name="ANDROID_SUPPORT_VERSION" value="24.+" />
+    </plugin>
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-plugin-zip" spec="^3.1.0" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-code-push" spec="^1.11.10" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
+    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="nl.x-services.plugins.backgroundaudio" spec="^1.0.1" />
+    <plugin name="cordova-plugin-background-download" spec="https://github.com/sgrebnov/cordova-plugin-background-download" />
+    <plugin name="com.mutatefile.plugin" spec="./MutateFile_Plugin" />
+    <plugin name="cordova-plugin-document-viewer" spec="https://github.com/sitewaerts/cordova-plugin-document-viewer.git" />
+    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
+    <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.431032775387-raio3k5jvt1rc64329713me0aoq3opkh" />
+        <variable name="WEB_APPLICATION_CLIENT_ID" value="431032775387-raio3k5jvt1rc64329713me0aoq3opkh.apps.googleusercontent.com" />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="^3.2.0">
+        <variable name="APP_ID" value="267816277122496" />
+        <variable name="APP_NAME" value="P.volve" />
+        <variable name="ANDROID_SDK_VERSION" value="4.35.0" />
+    </plugin>
+    <plugin name="cordova-plugin-ionic-webview" spec="https://github.com/platformpurple/cordova-plugin-ionic-webview">
+        <preference name="WKBind" value="localhost" />
+        <preference name="WKPort" value="8088" />
+        <variable name="ANDROID_SUPPORT_ANNOTATIONS_VERSION" value="27.+" />
+    </plugin>
+    <plugin name="cordova-plugin-appavailability" spec="^0.4.2" />
+    <plugin name="cordova-plugin-firebase" spec="^1.1.4" />
+    <engine name="ios" spec="~4.5.5" />
+    <engine name="android" spec="~7.0.0" />
+</widget>

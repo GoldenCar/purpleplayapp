@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1018919968840",
+    "firebase_url": "https://mypvolve.firebaseio.com",
+    "project_id": "mypvolve",
+    "storage_bucket": "mypvolve.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018919968840:android:32c46568c370087c",
+        "android_client_info": {
+          "package_name": "com.pvolve.my"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018919968840-vh5qf6rbniqr0otcfnftjg06pm87oga0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhxgZqSs1JASIR04yJzXDnJEVpELe-E7A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

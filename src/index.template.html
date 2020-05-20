@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height<% if (htmlWebpackPlugin.options.ctx.mode.cordova) { %>, viewport-fit=cover<% } %>">
+    <title><%= htmlWebpackPlugin.options.productName %></title>
+
+    <link rel="icon" href="statics/quasar-logo.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="statics/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="statics/icons/favicon-16x16.png">
+
+  </head>
+  <body>
+
+    <script type="text/javascript">
+        // pretty object viewing in console
+        window.j = function(obj) {
+            return JSON.stringify(obj, null, 2)
+        }
+
+        function devMode() {
+            var devMode
+
+            // comment in for devMode
+            devMode = true
+            return devMode
+        }
+
+        function vNumber() {
+            return '2.0.6-6-3';
+        }
+
+        if (devMode()) {
+            window.k = console.log.bind(console)
+            window.kw = console.warn.bind(console)
+            window.ki = console.info.bind(console)
+            window.kd = console.debug.bind(console)
+            window.ke = console.error.bind(console)
+        } else {
+            window.k = function() {}
+            window.kw = function() {}
+            window.ki = function() {}
+            window.kd = function() {}
+            window.ke = function() {}
+        }
+
+        window.forSubmission = false
+        window.useCodePushUpdates = true
+        var storage = window.localStorage;
+        var isAppUpdated = storage.getItem('isAppUpdated');
+        var spinner = false;
+
+        function syncStatusCallback(syncStatus) {
+            if (syncStatus === SyncStatus.UPDATE_INSTALLED) {
+                storage.setItem('isAppUpdated', 'true')
+                spinner = false;
+                if (SpinnerPlugin) SpinnerPlugin.activityStop();
+                window.codePush.restartApplication();
+            } else if ([SyncStatus.UP_TO_DATE, SyncStatus.ERROR, SyncStatus.UPDATE_IGNORED].indexOf(syncStatus) > -1) {
+                if (spinner) {
+                    if (SpinnerPlugin) SpinnerPlugin.activityStop();
+                }
+            }
+        }
+
+        function checkForUpdate() {
+            k('checking for codepush update')
+            if (!isAppUpdated) {
+                if (!spinner) {
+                    spinner = true;
+                    if (SpinnerPlugin) SpinnerPlugin.activityStart("Loading...", {
+                        dimBackground: true
+                    });
+                }
+                window.codePush.sync(syncStatusCallback, {
+                    installMode: InstallMode.IMMEDIATE
+                });
+
+            } else {
+                window.codePush.sync(syncStatusCallback);
+            }
+        }
+
+    </script>
+
+    <div id="q-app"></div>
+
+  </body>
+</html>

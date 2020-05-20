@@ -1,0 +1,29 @@
+
+body.cordova.platform-ios .q-layout > .q-layout-header > .q-toolbar,
+body.cordova.platform-ios .q-layout > .q-layout-header > div > .q-toolbar {
+    padding-top: unset;
+    min-height: unset;
+}
+
+@media (max-width: 767px) {
+    body.cordova.platform-ios .q-layout > .q-layout-header > .q-toolbar,
+    body.cordova.platform-ios .q-layout > .q-layout-header > div > .q-toolbar {
+        padding-top: 2.7rem !important;
+        min-height: 70px;
+    }
+
+    body.cordova.platform-ios .q-layout > .q-layout-footer > div {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    body.platform-ios .modal.fullscreen .q-layout-header {
+        padding-top: 2.5rem;
+    }
+}
+
+/* body.cordova.platform-ios {
+    padding-right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+} */

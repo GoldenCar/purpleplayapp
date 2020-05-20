@@ -1,0 +1,19 @@
+{
+  "name": "mutatefile_plugin",
+  "version": "1.0.0",
+  "description": "Cordova plugin for ios and android to mutate file with key.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platformpurple/MutateFile_Plugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/platformpurple/MutateFile_Plugin/issues"
+  },
+  "homepage": "https://github.com/platformpurple/MutateFile_Plugin#readme"
+}

@@ -1,0 +1,29 @@
+.q-alert.bg-positive {
+    background: #42BA99 !important;
+}
+
+.q-alert.bg-negative {
+    background: #F69477 !important;
+}
+
+.q-tabs-head {
+    background: #6ebda2 !important;
+}
+
+.q-modal-layout .q-layout-header {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.q-modal-layout .q-layout-footer {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-top: 1px solid #ccc;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+}

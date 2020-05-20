@@ -1,0 +1,122 @@
+{
+  "name": "MySigningTime",
+  "version": "2.0.6",
+  "description": "Enjoy all your favorite My Signing Time content!",
+  "productName": "My Signing Time",
+  "cordovaId": "com.twolittlehands.mysigningtime",
+  "author": "Platform Purple Inc.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "runBrowser": "quasar dev",
+    "runCordova": "quasar dev -m cordova -T ios",
+    "runElectron": "quasar dev -m electron -t mat",
+    "buildCordova": "quasar build -m cordova -T ios",
+    "buildElectron": "quasar build -m electron -t mat",
+    "buildImages": "cd src-cordova; cordova-splash; cordova-icon; cd ..;",
+    "resetAndroid": "cd src-cordova; cordova platform rm android; cordova platform add android; cordova-splash; cordova-icon; cordova build android;",
+    "resetiOS": "cd src-cordova; cordova platform rm ios; cordova platform add ios; cordova-splash; cordova-icon; cordova build ios;",
+    "pushiOSStaging": "cd src-cordova; code-push release-cordova mysigningtime2-ios ios --deploymentName Staging",
+    "pushAndroidStaging": "cd src-cordova; code-push release-cordova mysigningtime2-android android --deploymentName Staging",
+    "pushiOSProduction": "cd src-cordova; code-push release-cordova mysigningtime2-ios ios --deploymentName Production",
+    "pushAndroidProduction": "cd src-cordova; code-push release-cordova mysigningtime2-android android --deploymentName Production",
+    "prepack:win64": "quasar build -c --mode electron --target win32 --arch x64 --theme mat",
+    "pack:win64": "npm run prepack:win64 && electron-builder --win --x64 --project dist/electron-mat/UnPackaged/ --prepackaged …/ekb-win32-x64/"
+  },
+  "dependencies": {
+    "@jmellicker/j_": "^1.0.0",
+    "autoprefixer": "^8.6.2",
+    "axios": "^0.18.0",
+    "chartist": "^0.11.0",
+    "code-push": "^2.0.4",
+    "cordova-android": "^7.0.0",
+    "cordova-android-support-gradle-release": "^1.3.0",
+    "cordova-icon": "^1.0.0",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-code-push": "^1.11.0",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-crosswalk-webview": "^2.3.0",
+    "cordova-plugin-device": "^2.0.0",
+    "cordova-plugin-dialogs": "^2.0.0",
+    "cordova-plugin-file": "^4.3.3",
+    "cordova-plugin-file-transfer": "^1.6.3",
+    "cordova-plugin-spinner": "^1.1.0",
+    "cordova-plugin-statusbar": "^2.4.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-zip": "^3.1.0",
+    "cordova-splash": "^0.10.0",
+    "decompress-zip": "^0.3.1",
+    "electron-dl": "^1.11.0",
+    "electron-pdf-window": "^1.0.12",
+    "fs": "0.0.1-security",
+    "fs-jetpack": "^2.1.0",
+    "moment": "^2.22.2",
+    "network": "^0.4.1",
+    "onscreen": "^1.3.2",
+    "resumablejs": "^1.1.0",
+    "scapegoat": "^1.0.0",
+    "store": "^2.0.12",
+    "ua-parser-js": "^0.7.17",
+    "velocity-animate": "^1.5.1",
+    "video.js": "^6.7.3",
+    "vue-cropperjs": "^2.2.2",
+    "vue-draggable": "^1.0.6",
+    "vue-i18n": "^7.8.1",
+    "vue-multiselect": "^2.1.0",
+    "vue-rate-it": "^2.1.0",
+    "vue-scrollto": "^2.13.0",
+    "vue-the-mask": "^0.11.1",
+    "vuedraggable": "^2.16.0"
+  },
+  "devDependencies": {
+    "devtron": "1.4.0",
+    "electron": "1.8.3",
+    "electron-builder": "^20.15.1",
+    "electron-debug": "1.5.0",
+    "electron-devtools-installer": "2.2.1",
+    "electron-packager": "11.1.0",
+    "quasar-cli": "^0.16.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-crosswalk-webview": {
+        "XWALK_VERSION": "23+",
+        "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+        "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+        "XWALK_MODE": "embedded",
+        "XWALK_MULTIPLEAPK": "true"
+      },
+      "cordova-plugin-file": {},
+      "cordova-plugin-spinner": {},
+      "cordova-plugin-code-push": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-android-support-gradle-release": {
+        "ANDROID_SUPPORT_VERSION": "27.+"
+      },
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-splashscreen": {},
+      "nl.x-services.plugins.backgroundaudio": {},
+      "cordova-plugin-background-download": {},
+      "cordova-plugin-document-viewer": {},
+      "cordova-plugin-file-opener2": {},
+      "cordova-plugin-zip": {}
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "currentBrand": "mysigningtime"
+}

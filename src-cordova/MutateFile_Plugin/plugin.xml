@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.mutatefile.plugin"
+        version="0.0.5">
+
+  <name>MutateFile</name>
+  <description>Mutate File</description>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/mutate.js" target="js/mutate.js"/>
+
+  <js-module src="www/mutate.js" name="MutateFile">
+    <clobbers target="MutateFile" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MutateFile">
+        <param name="android-package" value="com.mutatefile.plugin.MutateFile" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/MutateFile.java" target-dir="src/com/mutatefile/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/widget">
+      <feature name="MutateFile">
+        <param name="ios-package" value="MutateFile" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/MutateFile.h" target-dir="MutatePlugin"/>
+    <source-file src="src/ios/MutateFile.m" target-dir="MutatePlugin"/>
+  </platform>
+
+  <platform name="windows">
+    <js-module src="src/windows/MutateProxy.js" name="MutateProxy">
+        <merges target="" />
+    </js-module>
+    <framework src="src/windows/MutateFileNative.winmd" custom="true"/>
+  </platform>
+</plugin>
